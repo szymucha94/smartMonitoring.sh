@@ -19,6 +19,8 @@ Note: on some systems "onlyspinning" will spin up idling HDDs. Consider spindown
 
 Note2: home assistant integration is done over rest api. Meaning any sensor that was created this way is going to disappear after HA restart. AFter being re-created they maintain previous history.
 
+![obraz](https://github.com/user-attachments/assets/b6153e32-b7d2-418f-8616-26d2d2f7cc0e)
+
 # report_uas_io_stats_to_ha.sh
 
 Bonus PoC daemon script for detecting connection issues with USB HDD bridges and reporting counter values to Home Assistant. 

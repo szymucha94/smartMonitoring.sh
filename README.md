@@ -16,3 +16,6 @@ Installation:
 */5 * * * * /bin/bash /usr/sbin/smartMonitoring.sh onlyspinning
 
 Note: on some systems "onlyspinning" will spin up idling HDDs. Consider spindown settings of HDDs when modifying crontab. Above settings work fine after calling "/sbin/hdparm -S 50 /dev/sd?" as the spindown time is shorter than 5 minutes.
+
+Note2: home assistant integration is done over rest api. Meaning any sensor that was created this way is going to disappear after HA restart. AFter being re-created they maintain previous history.
+

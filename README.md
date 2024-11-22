@@ -4,13 +4,14 @@ Additionally it reports motor state (spinning/not spinning) of HDDs and temperat
 Smartctl is known to not work with some NVMe usb-pcie adapters but should work with most sata-usb bridges. If it doesn't - consider switching smartctl parameter "-d auto" to "-d sat" or any other available one.
 
 Installation:
+0. Install smartctl and curl
 1. hardcode haAuthToken variable to long-lived HA token of any admin ha account (or use external provider script that outputs such token, ie. the default)
 2. Adjust ha address and port, mail server ip address and port (it won't work with SSL in it's current state), hostname and other settings
 3. Align ignored drive serial numbers and/or parameters if needed - some disks/bridges don't support SMART or just don't report any of the expected parameters
 4. Consider automated execution by adding script to crontab. Personal settings:
 
-#S.M.A.R.T. monitoring, full check once a day, spinning drives check at most every 5 minutes
 1 0 * * * /bin/bash /usr/sbin/smartMonitoring.sh automated 2>&1 | /usr/bin/logger -t smartMonitoring
+
 */5 * * * * /bin/bash /usr/sbin/smartMonitoring.sh onlyspinning
 
 Note: on some systems "onlyspinning" will spin up idling HDDs. Consider spindown settings of HDDs when modifying crontab. Above settings work fine after calling "/sbin/hdparm -S 50 /dev/sd?" as the spindown time is shorter than 5 minutes.

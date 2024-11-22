@@ -1,5 +1,5 @@
 # smartMonitoring.sh
-PoC smartctl wrapper for basic HA/mail notifications. Works by generating smart report for supported disks, checking status of self-assessment test and default parameters that for non-failing drives should always be zero (Reallocated_Sector_Ct Reallocated_Event_Count Current_Pending_Sector). For NVMe drives it only checks self-assessment and compares wear level against the defined threshold.
+PoC smartctl wrapper for basic Home Assistant/mail notifications. Works by generating smart report for supported disks, checking status of self-assessment test and default parameters that for non-failing drives should always be zero (Reallocated_Sector_Ct Reallocated_Event_Count Current_Pending_Sector). For NVMe drives it only checks self-assessment and compares wear level against the defined threshold.
 Additionally it reports motor state (spinning/not spinning) of HDDs and temperature of HDDs/SSDs/NVMes to HA. 
 Smartctl is known to not work with some NVMe usb-pcie adapters but should work with most sata-usb bridges. If it doesn't - consider switching smartctl parameter "-d auto" to "-d sat" or any other available one.
 

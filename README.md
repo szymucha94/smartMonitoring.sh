@@ -17,7 +17,7 @@ Installation:
 
 Note: on some systems "onlyspinning" will spin up idling HDDs. Consider spindown settings of HDDs when modifying crontab. Above settings work fine after calling "/sbin/hdparm -S 50 /dev/sd?" as the spindown time is shorter than 5 minutes.
 
-Note2: home assistant integration is done over rest api. Meaning any sensor that was created this way is going to disappear after HA restart. AFter being re-created they maintain previous history.
+Note2: home assistant integration is done over rest api. Meaning any sensor that was created this way is going to disappear after HA restart. After being re-created they maintain previous history.
 
 ![obraz](https://github.com/user-attachments/assets/b6153e32-b7d2-418f-8616-26d2d2f7cc0e)
 

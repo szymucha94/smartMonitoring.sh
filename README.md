@@ -4,6 +4,7 @@ Additionally it reports motor state (spinning/not spinning) of HDDs and temperat
 Smartctl is known to not work with some NVMe usb-pcie adapters but should work with most sata-usb bridges. If it doesn't - consider switching smartctl parameter "-d auto" to "-d sat" or any other available one.
 
 Installation:
+
 0. Install smartctl and curl
 1. hardcode haAuthToken variable to long-lived HA token of any admin ha account (or use external provider script that outputs such token, ie. the default)
 2. Adjust ha address and port, mail server ip address and port (it won't work with SSL in it's current state), hostname and other settings
